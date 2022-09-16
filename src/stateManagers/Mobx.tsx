@@ -12,6 +12,13 @@ export class CounterState implements ICounterState {
   }
 }
 
+const counterState = new CounterState();
+export const MobxApp = observer(() => {
+  return (<>
+    <Counter {...counterState} />
+  </>);
+});
+
 export class CountersState {
   constructor() {
     makeAutoObservable(this);
@@ -21,7 +28,6 @@ export class CountersState {
     this.counters.push(new CounterState());
   }
 }
-
 
 const countersState = new CountersState();
 
