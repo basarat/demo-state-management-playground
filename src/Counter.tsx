@@ -7,8 +7,6 @@
  * - An Input Field
  * - A Symbol Row
  * - A Watchlist
- * 
- * 
  */
 export const Counter = (props: { count: number, inc: () => void }) => {
   return (

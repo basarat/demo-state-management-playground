@@ -28,9 +28,11 @@ Challenge: Create reusable state. See `Counter.tsx` for further details.
   * +ve easy to test logic as _just javascript_ (no react required)
   * -ve have to wrap components in `observable`
 * valtio
-  * - pending -
   * transparent reactive
   * +ve less code than jotai (transparent => atomic without the noise)
   * +ve less object oriented than mobx
-  * +ve claims support with redux tools
+  * +ve integrates into react nicer than mobx (uses hooks, no need for observer wrapper + works with suspense)([link](https://mobx.js.org/react-integration.html))
+  * +ve claims support with redux tools ([link](https://github.com/pmndrs/valtio#dev-tools))
+  * +ve composable ([link](https://github.com/pmndrs/valtio/wiki/How-to-split-and-compose-states))
   * +ve automatic render optimizations just like mobx ([comparison to zustand](https://docs.pmnd.rs/zustand/getting-started/comparison#valtio))
+  * -ve not a big market share (compared to redux, mobx, zustand)
