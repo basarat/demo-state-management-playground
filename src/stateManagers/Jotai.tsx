@@ -27,3 +27,7 @@ export function JotaiApp() {
     <Counter {...{ inc, count }} />
   </>);
 }
+
+/** 
+ * Multi can be done (unproven) 
+ */
