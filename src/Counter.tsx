@@ -9,6 +9,7 @@
  * - A Watchlist
  */
 export const Counter = (props: { count: number, inc: () => void }) => {
+  console.log('Counter Rendered');
   return (
     <div>
       <button onClick={props.inc}>+</button>
