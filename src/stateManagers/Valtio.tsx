@@ -19,9 +19,9 @@ export function ValtioApp() {
   </>);
 }
 
-const counters = proxy<ICounterState[]>([]);
-const addCounter = () => counters.push(createCounter());
-function useCounters() {
+export const counters = proxy<ICounterState[]>([]);
+export const addCounter = () => counters.push(createCounter());
+export function useCounters() {
   const countersSnap = useSnapshot(counters);
   return {counters: countersSnap, addCounter};
 } 

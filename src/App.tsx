@@ -1,12 +1,13 @@
 import { HooksApp } from './stateManagers/Hooks';
+import { HooksMultiApp } from './stateManagers/Hooks';
 import { ZustandApp } from './stateManagers/Zustand';
 import { JotaiApp } from './stateManagers/Jotai';
 import { MobxMultiApp } from './stateManagers/Mobx';
 import { ValtioApp, ValtioMultiApp } from './stateManagers/Valtio';
 import { useState } from 'react';
 
-type Framework = 'Hooks' | 'Zustand' | 'Jotai' | 'MobxMulti' | 'Valtio' | 'ValtioMulti';
-const frameworks: Framework[] = ['Hooks', 'Zustand', 'Jotai', 'MobxMulti', 'Valtio','ValtioMulti'];
+type Framework = 'Hooks' | 'HooksMulti' | 'Zustand' | 'Jotai' | 'MobxMulti' | 'Valtio' | 'ValtioMulti';
+const frameworks: Framework[] = ['Hooks', 'HooksMulti', 'Zustand', 'Jotai', 'MobxMulti', 'Valtio', 'ValtioMulti'];
 
 export const SelectorApp = () => {
   const [currentFramework, setCurrentFramework] = useState<Framework>(frameworks[0]);
@@ -14,17 +15,18 @@ export const SelectorApp = () => {
   return (<>
     <div>
       {frameworks.map(f => <button key={f} onClick={() => setCurrentFramework(f)}>{f}</button>)}
-      <br/>
+      <br />
       <div>Current Framework: {currentFramework}</div>
       <hr />
       {
         currentFramework === 'Hooks' ? <HooksApp />
-          : currentFramework === 'Zustand' ? <ZustandApp />
-            : currentFramework === 'Jotai' ? <JotaiApp />
-              : currentFramework === 'MobxMulti' ? <MobxMultiApp />
-                : currentFramework === 'Valtio' ? <ValtioApp />
-                : currentFramework === 'ValtioMulti' ? <ValtioMultiApp />
-                  : null
+          : currentFramework === 'HooksMulti' ? <HooksMultiApp />
+            : currentFramework === 'Zustand' ? <ZustandApp />
+              : currentFramework === 'Jotai' ? <JotaiApp />
+                : currentFramework === 'MobxMulti' ? <MobxMultiApp />
+                  : currentFramework === 'Valtio' ? <ValtioApp />
+                    : currentFramework === 'ValtioMulti' ? <ValtioMultiApp />
+                      : null
       }
     </div>
   </>);

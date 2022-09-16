@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Counter, ICounterState } from '../Counter';
 
 export const useCounter = (): ICounterState => {
@@ -16,13 +16,16 @@ export function HooksApp() {
   </>);
 }
 
-// function App() {
-//   const counters = Array.from({ length: 5 }).map(useCounter);
+/** Breaks the rules of hooks */
+export function HooksMultiApp() {
+  const counters = Array.from({ length: 5 }).map(useCounter);
 
-//   return (<>
-//     {counters.map((counter, i) => <Counter key={i} {...counter} />)}
-//     <div>Sum: {
-//       counters.reduce((sum, counter) => sum + counter.count, 0)
-//     }</div>
-//     </>);
-// }
+  return (<>
+    {counters.map((counter, i) => <Counter key={i} {...counter} />)}
+    <div>Sum: {
+      counters.reduce((sum, counter) => sum + counter.count, 0)
+    }</div>
+  </>);
+}
+
+
