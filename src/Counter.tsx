@@ -1,11 +1,14 @@
 /** 
- * Objective: Create a reusable piece of logic for this
+ * Objective: 
+ * - Create a reusable state for a reusable component
+ * - The state needs to be composible _as is_ in an array
+ * 
  * Counter is a placeholder for lots of other general components 
  * - An Input Field
  * - A Symbol Row
  * - A Watchlist
  * 
- * All of these ^ will need to be in arrays
+ * 
  */
 export const Counter = (props: { count: number, inc: () => void }) => {
   return (
