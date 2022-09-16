@@ -19,12 +19,3 @@ export class CountersState {
     this.counters.push(new CounterState());
   }
 }
-/** 
- * zustand: redux mental model, with less boiler plate 
- * 
- * jotai: 
- * atomic state model, easier to compose, atoms inside atoms, 
- * - to use you have to use a hook, mutations need to be done via set
- * 
- * mobx: atomic - less code than jotai ... because it assumes that you are willing to wrap your components in observer
- */
