@@ -15,11 +15,12 @@ Challenge: Create reusable state. See `Counter.tsx` for further details.
   * redux mental model
   * +ve less boiler plate than redux
   * +ve can have async setters in store - no need for ugly thunks
-  * -ve stores cannot be composed (same as redux). So difficult to create reusable pieces of state (state = store).
+  * -ve stores cannot be composed, same as redux. So difficult to create reusable pieces of state (state = store)
 * jotai
   * atomic state model
   * +ve easier to compose (atoms inside atoms)
-  * -ve mutations need to be done via set - not very type friendly
+  * -ve mutations need to be done via set - not very TypeScript friendly
+  * -ve each usage of an atom needs a `useAtom` hook
 * mobx
   * atomic 
   * +ve composible

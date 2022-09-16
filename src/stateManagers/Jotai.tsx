@@ -1,4 +1,4 @@
-import { atom, useAtom } from "jotai";
+import { atom, useAtom, useAtomValue } from "jotai";
 import { Counter } from '../Counter';
 
 export const createCounter = () => {
@@ -21,7 +21,7 @@ const counter = createCounter();
 
 export function JotaiApp() {
   const { countAtom, incAtom } = counter;
-  const [count] = useAtom(countAtom);
+  const count = useAtomValue(countAtom);
   const [, inc] = useAtom(incAtom);
   return (<>
     <Counter {...{ inc, count }} />
