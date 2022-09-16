@@ -22,12 +22,15 @@ Challenge: Create reusable state. See `Counter.tsx` for further details.
   * -ve mutations need to be done via set - not very TypeScript friendly
   * -ve each usage of an atom needs a `useAtom` hook
 * mobx
-  * atomic 
+  * transparent reactive
   * +ve composible
-  * +ve less code than jotai
+  * +ve less code than jotai (transparent => atomic without the noise)
   * +ve easy to test logic as _just javascript_ (no react required)
   * -ve have to wrap components in `observable`
 * valtio
   * - pending -
+  * transparent reactive
+  * +ve less code than jotai (transparent => atomic without the noise)
+  * +ve less object oriented than mobx
   * +ve claims support with redux tools
   * +ve automatic render optimizations just like mobx ([comparison to zustand](https://docs.pmnd.rs/zustand/getting-started/comparison#valtio))
