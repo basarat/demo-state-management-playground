@@ -17,3 +17,8 @@ export const Counter = (props: { count: number, inc: () => void }) => {
     </div>
   );
 }
+
+export type CounterState = {
+  count: number,
+  inc: () => void,
+};
