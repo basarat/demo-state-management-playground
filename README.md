@@ -7,6 +7,8 @@ npm t # Run tests
 
 # Analysis
 
+Challege: Create reusable state. See `Counter.tsx` for further details.
+
 * redux / redux-toolkit
   * this is our baseline as everyone starts with redux
 * zustand
