@@ -7,10 +7,13 @@ npm t # Run tests
 
 # Analysis
 
+* redux / redux-toolkit
+  * this is our baseline as everyone starts with redux
 * zustand
   * redux mental model
-  * less boiler plate than redux.
-  * -ve stores cannot be composed. So difficult to create reusable pieces of state (state = store).
+  * +ve less boiler plate than redux
+  * +ve can have async setters in store - no need for ugly thunks
+  * -ve stores cannot be composed (same as redux). So difficult to create reusable pieces of state (state = store).
 * jotai
   * atomic state model
   * +ve easier to compose (atoms inside atoms)
