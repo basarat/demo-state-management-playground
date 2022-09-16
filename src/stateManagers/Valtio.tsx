@@ -23,11 +23,11 @@ export const counters = proxy<ICounterState[]>([]);
 export const addCounter = () => counters.push(createCounter());
 export function useCounters() {
   const countersSnap = useSnapshot(counters);
-  return {counters: countersSnap, addCounter};
-} 
+  return { counters: countersSnap, addCounter };
+}
 
 export function ValtioMultiApp() {
-  const {counters, addCounter} = useCounters();
+  const { counters, addCounter } = useCounters();
   return (<>
     <div>
       Sum: {
@@ -35,6 +35,9 @@ export function ValtioMultiApp() {
       }</div>
     <button onClick={() => addCounter()}>Add Counter</button>
 
-    {counters.map((counterState, i) => <Counter key={i} {...counterState} />)}
+    {counters.map(
+      (counterState, i) =>
+        <Counter key={i} {...counterState} />
+    )}
   </>);
 }

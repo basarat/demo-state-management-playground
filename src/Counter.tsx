@@ -1,3 +1,5 @@
+import React from 'react';
+
 /** 
  * Objective: 
  * - Create a reusable state for a reusable component
@@ -8,7 +10,7 @@
  * - A Symbol Row
  * - A Watchlist
  */
-export const Counter = (props: { count: number, inc: () => void }) => {
+export const Counter = React.memo((props: { count: number, inc: () => void }) => {
   console.log('Counter Rendered');
   return (
     <div>
@@ -17,7 +19,7 @@ export const Counter = (props: { count: number, inc: () => void }) => {
       <div>{props.count}</div>
     </div>
   );
-}
+});
 
 export type ICounterState = {
   count: number,
