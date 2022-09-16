@@ -1,13 +1,13 @@
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react';
-import { Counter } from '../Counter';
+import { Counter, ICounterState } from '../Counter';
 
-export class CounterState {
+export class CounterState implements ICounterState {
   constructor() {
     makeAutoObservable(this);
   }
   count = 0;
-  inc = () => {
+  inc = async () => {
     this.count++;
   }
 }
@@ -25,7 +25,7 @@ export class CountersState {
 
 const countersState = new CountersState();
 
-export const MobxApp = observer(() => {
+export const MobxMultiApp = observer(() => {
   return (<>
     <div>
       Sum: {

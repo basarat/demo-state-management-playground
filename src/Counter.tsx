@@ -18,7 +18,8 @@ export const Counter = (props: { count: number, inc: () => void }) => {
   );
 }
 
-export type CounterState = {
+export type ICounterState = {
   count: number,
-  inc: () => void,
+  /** This incremenent is assumed to support backend calls */
+  inc: () => Promise<void>,
 };

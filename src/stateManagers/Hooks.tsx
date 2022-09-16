@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { Counter } from '../Counter';
+import { Counter, ICounterState } from '../Counter';
 
-export const useCounter = () => {
+export const useCounter = (): ICounterState => {
   const [count, setCount] = useState(0);
-  const inc = () => setCount(c => c + 1);
+  const inc = async () => setCount(c => c + 1);
   return {
     count, inc
   }
 };
 
-export function App() {
+export function HooksApp() {
   const counterState = useCounter();
   return (<>
     <Counter {...counterState} />

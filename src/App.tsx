@@ -1,20 +1,34 @@
-// import { App } from './stateManagers/Hooks';
-// import { ZustandApp as App} from './stateManagers/Zustand';
-// import { JotaiApp as App} from './stateManagers/Jotai';
-// import { MobxApp as App } from './stateManagers/Mobx';
-// import { ValtioApp as App } from './stateManagers/Valtio';
-import { ValtioMultiApp as App } from './stateManagers/Valtio';
-// import { useState } from 'react';
+import { HooksApp } from './stateManagers/Hooks';
+import { ZustandApp } from './stateManagers/Zustand';
+import { JotaiApp } from './stateManagers/Jotai';
+import { MobxMultiApp } from './stateManagers/Mobx';
+import { ValtioApp, ValtioMultiApp } from './stateManagers/Valtio';
+import { useState } from 'react';
 
-// export const SelectorApp() {
-//   const frameworks = ['Hooks', 'Zustand', 'Jotai', 'Mobx', 'Valtio'];
-//   const [currentFramework, setCurrentFramework] = useState(frameworks[0]);
+type Framework = 'Hooks' | 'Zustand' | 'Jotai' | 'MobxMulti' | 'Valtio' | 'ValtioMulti';
+const frameworks: Framework[] = ['Hooks', 'Zustand', 'Jotai', 'MobxMulti', 'Valtio','ValtioMulti'];
 
-//   return (<>
-//     <div>
-//       {frameworks.map(f => <button key={f} onClick={() => setCurrentFramework(f)}>{f}</button>)}
-//     </div>
-//   </>);
-// }
+export const SelectorApp = () => {
+  const [currentFramework, setCurrentFramework] = useState<Framework>(frameworks[0]);
 
-export default App;
+  return (<>
+    <div>
+      {frameworks.map(f => <button key={f} onClick={() => setCurrentFramework(f)}>{f}</button>)}
+      <br/>
+      <div>Current Framework: {currentFramework}</div>
+      <hr />
+      {
+        currentFramework === 'Hooks' ? <HooksApp />
+          : currentFramework === 'Zustand' ? <ZustandApp />
+            : currentFramework === 'Jotai' ? <JotaiApp />
+              : currentFramework === 'MobxMulti' ? <MobxMultiApp />
+                : currentFramework === 'Valtio' ? <ValtioApp />
+                : currentFramework === 'ValtioMulti' ? <ValtioMultiApp />
+                  : null
+      }
+    </div>
+  </>);
+}
+
+
+export default SelectorApp;

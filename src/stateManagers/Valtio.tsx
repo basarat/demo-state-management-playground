@@ -1,14 +1,14 @@
 import { proxy, useSnapshot } from 'valtio';
-import { Counter, CounterState } from '../Counter';
+import { Counter, ICounterState } from '../Counter';
 
-function createCounter(): CounterState {
-  const counter = proxy({
+function createCounter(): ICounterState {
+  const counterState = proxy({
     count: 0,
-    inc: () => {
-      ++counter.count
+    inc: async () => {
+      ++counterState.count;
     }
   });
-  return counter;
+  return counterState;
 }
 
 const counter = createCounter();
@@ -19,7 +19,7 @@ export function ValtioApp() {
   </>);
 }
 
-const counters = proxy<CounterState[]>([]);
+const counters = proxy<ICounterState[]>([]);
 const addCounter = () => counters.push(createCounter());
 function useCounters() {
   const countersSnap = useSnapshot(counters);
