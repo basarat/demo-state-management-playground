@@ -28,4 +28,5 @@ Challenge: Create reusable state. See `Counter.tsx` for further details.
   * -ve have to wrap components in `observable`
 * valtio
   * - pending -
-  * potentially works with redux tools
+  * +ve claims support with redux tools
+  * +ve automatic render optimizations just like mobx ([comparison to zustand](https://docs.pmnd.rs/zustand/getting-started/comparison#valtio))
